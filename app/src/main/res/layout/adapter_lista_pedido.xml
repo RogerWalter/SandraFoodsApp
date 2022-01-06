@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="90dp"
+    android:background="@drawable/background_rv_branco">
+
+    <TextView
+        android:id="@+id/tvAdpPedidoQtd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="4dp"
+        android:text="20"
+        android:textColor="@color/laranja"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tvAdpPedidoX"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center|clip_vertical"
+        android:text="x"
+        android:textColor="@color/laranja"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tvAdpPedidoQtd"
+        app:layout_constraintStart_toEndOf="@+id/tvAdpPedidoQtd"
+        app:layout_constraintTop_toTopOf="@+id/tvAdpPedidoQtd" />
+
+    <TextView
+        android:id="@+id/tvAdpPedidoNome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:text="HAMBÚRGUER DE COSTELA"
+        android:textColor="@color/marrom"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvAdpPedidoAdicionais"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:gravity="center"
+        android:text="+BACON +CHEDDAR +CALABRESA"
+        android:textColor="@color/laranja"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toBottomOf="@+id/tvAdpPedidoNome" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.18" />
+
+    <TextView
+        android:id="@+id/tvAdpPedidoValorUnitario"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:gravity="center"
+        android:text="R$19,00"
+        android:textColor="@color/laranja"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvAdpPedidoValorTotal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:gravity="center"
+        android:text="R$19,00"
+        android:textColor="@color/laranja"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline5" />
+
+    <TextView
+        android:id="@+id/tvAdpPedidoInfo1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Unitário"
+        android:textColor="@color/marrom"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvAdpPedidoValorUnitario"
+        app:layout_constraintEnd_toEndOf="@+id/tvAdpPedidoValorUnitario"
+        app:layout_constraintStart_toStartOf="@+id/tvAdpPedidoValorUnitario" />
+
+    <TextView
+        android:id="@+id/tvAdpPedidoInfo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total"
+        android:textColor="@color/marrom"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvAdpPedidoValorTotal"
+        app:layout_constraintEnd_toEndOf="@+id/tvAdpPedidoValorTotal"
+        app:layout_constraintStart_toStartOf="@+id/tvAdpPedidoValorTotal" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

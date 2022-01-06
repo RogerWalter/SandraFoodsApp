@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_cardapio"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/branco"
+    tools:context=".fragment.Cardapio">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.85" />
+
+    <ProgressBar
+        android:id="@+id/progressBarCardápio"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:indeterminateDrawable="@drawable/progress"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0.10"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fundo_rv"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvFragmentCardapio"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/transparent"
+        android:padding="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loCardapioFiltros"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/tvCardapioTitulo"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:background="@drawable/background_titulo_fragment"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="Cardápio"
+        android:textColor="@color/branco"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivErroCardapio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_erro_sem_dados"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/loCardapioFiltros"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/background_contornado_laranja"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCardapioTitulo"
+        tools:visibility="visible">
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="4dp"
+            android:src="@drawable/background_elevated_branco"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ibFiltroOutros"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView55"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="4dp"
+            android:src="@drawable/background_elevated_branco"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ibFiltroSalgado"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/ibFiltroLanche"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/branco"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_icone_filtro_lanches_inativo"
+            app:layout_constraintEnd_toStartOf="@+id/ibFiltroCrepe"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/ibFiltroSalgado"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@color/branco"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_icone_filtro_salgado_inativo"
+            app:layout_constraintBottom_toBottomOf="@+id/ibFiltroOutros"
+            app:layout_constraintEnd_toStartOf="@+id/ibFiltroDoce"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/ibFiltroOutros"
+            app:layout_constraintTop_toTopOf="@+id/ibFiltroOutros" />
+
+        <ImageButton
+            android:id="@+id/ibFiltroCrepe"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@color/branco"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_icone_filtro_crepes_inativo"
+            app:layout_constraintBottom_toTopOf="@+id/textView3"
+            app:layout_constraintEnd_toStartOf="@+id/ibFiltroTapioca"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/ibFiltroLanche"
+            app:layout_constraintTop_toTopOf="@+id/ibFiltroLanche" />
+
+        <ImageButton
+            android:id="@+id/ibFiltroOutros"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@color/branco"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_icone_filtro_outros_inativo"
+            app:layout_constraintBottom_toTopOf="@+id/textView34"
+            app:layout_constraintEnd_toStartOf="@+id/ibFiltroSalgado"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/ibFiltroBebida"
+            app:layout_constraintTop_toTopOf="@+id/ibFiltroBebida"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageButton
+            android:id="@+id/ibFiltroBebida"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@color/branco"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_icone_filtro_bebidas_inativo"
+            app:layout_constraintBottom_toTopOf="@+id/textView32"
+            app:layout_constraintEnd_toStartOf="@+id/ibFiltroOutros"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/ibFiltroPorcao"
+            app:layout_constraintTop_toTopOf="@+id/ibFiltroPorcao"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageButton
+            android:id="@+id/ibFiltroPorcao"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@color/branco"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_icone_filtro_porcoes_inativo"
+            app:layout_constraintBottom_toBottomOf="@+id/ibFiltroPastel"
+            app:layout_constraintEnd_toStartOf="@+id/ibFiltroBebida"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/ibFiltroPastel"
+            app:layout_constraintTop_toTopOf="@+id/ibFiltroPastel"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageButton
+            android:id="@+id/ibFiltroPastel"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@color/branco"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_icone_filtro_pasteis_inativo"
+            app:layout_constraintBottom_toBottomOf="@+id/ibFiltroTapioca"
+            app:layout_constraintEnd_toStartOf="@+id/ibFiltroPorcao"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/ibFiltroTapioca"
+            app:layout_constraintTop_toTopOf="@+id/ibFiltroTapioca"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageButton
+            android:id="@+id/ibFiltroTapioca"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@color/branco"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_icone_filtro_tapiocas_inativo"
+            app:layout_constraintBottom_toTopOf="@+id/textView12"
+            app:layout_constraintEnd_toStartOf="@+id/ibFiltroPastel"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/ibFiltroCrepe"
+            app:layout_constraintTop_toTopOf="@+id/ibFiltroCrepe"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageButton
+            android:id="@+id/ibFiltroDoce"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@color/branco"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_icone_filtro_doce_inativo"
+            app:layout_constraintBottom_toBottomOf="@+id/ibFiltroSalgado"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/ibFiltroSalgado"
+            app:layout_constraintTop_toTopOf="@+id/ibFiltroSalgado" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:text="Lanches"
+            android:textColor="@color/marrom"
+            android:textSize="8sp"
+            app:layout_constraintEnd_toEndOf="@+id/ibFiltroLanche"
+            app:layout_constraintStart_toStartOf="@+id/ibFiltroLanche"
+            app:layout_constraintTop_toBottomOf="@+id/ibFiltroLanche" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:text="Crepes"
+            android:textColor="@color/marrom"
+            android:textSize="8sp"
+            app:layout_constraintEnd_toEndOf="@+id/ibFiltroCrepe"
+            app:layout_constraintStart_toStartOf="@+id/ibFiltroCrepe"
+            app:layout_constraintTop_toBottomOf="@+id/ibFiltroCrepe" />
+
+        <TextView
+            android:id="@+id/textView31"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:text="Tapioca"
+            android:textColor="@color/marrom"
+            android:textSize="8sp"
+            app:layout_constraintEnd_toEndOf="@+id/ibFiltroTapioca"
+            app:layout_constraintStart_toStartOf="@+id/ibFiltroTapioca"
+            app:layout_constraintTop_toBottomOf="@+id/ibFiltroTapioca" />
+
+        <TextView
+            android:id="@+id/textView32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="8dp"
+            android:text="Porções"
+            android:textColor="@color/marrom"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/ibFiltroPorcao"
+            app:layout_constraintStart_toStartOf="@+id/ibFiltroPorcao"
+            app:layout_constraintTop_toBottomOf="@+id/ibFiltroPorcao" />
+
+        <TextView
+            android:id="@+id/textView34"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:text="Bebidas"
+            android:textColor="@color/marrom"
+            android:textSize="8sp"
+            app:layout_constraintEnd_toEndOf="@+id/ibFiltroBebida"
+            app:layout_constraintStart_toStartOf="@+id/ibFiltroBebida"
+            app:layout_constraintTop_toBottomOf="@+id/ibFiltroBebida" />
+
+        <TextView
+            android:id="@+id/textView35"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:text="Outros"
+            android:textColor="@color/marrom"
+            android:textSize="8sp"
+            app:layout_constraintEnd_toEndOf="@+id/ibFiltroOutros"
+            app:layout_constraintStart_toStartOf="@+id/ibFiltroOutros"
+            app:layout_constraintTop_toBottomOf="@+id/ibFiltroOutros" />
+
+        <TextView
+            android:id="@+id/textView33"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:text="Pastéis"
+            android:textColor="@color/marrom"
+            android:textSize="8sp"
+            app:layout_constraintEnd_toEndOf="@+id/ibFiltroPastel"
+            app:layout_constraintStart_toStartOf="@+id/ibFiltroPastel"
+            app:layout_constraintTop_toBottomOf="@+id/ibFiltroPastel" />
+
+        <TextView
+            android:id="@+id/textView36"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:text="Doce"
+            android:textColor="@color/laranja"
+            android:textSize="8sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/ibFiltroDoce"
+            app:layout_constraintStart_toStartOf="@+id/ibFiltroDoce"
+            app:layout_constraintTop_toBottomOf="@+id/ibFiltroDoce" />
+
+        <TextView
+            android:id="@+id/textView37"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:text="Salgado"
+            android:textColor="@color/laranja"
+            android:textSize="8sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/ibFiltroSalgado"
+            app:layout_constraintStart_toStartOf="@+id/ibFiltroSalgado"
+            app:layout_constraintTop_toBottomOf="@+id/ibFiltroSalgado" />
+
+        <TextView
+            android:id="@+id/textView38"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:text="Produtos"
+            android:textColor="@color/laranja"
+            android:textSize="9sp"
+            app:layout_constraintBottom_toTopOf="@+id/ibFiltroPastel"
+            app:layout_constraintEnd_toEndOf="@+id/imageView55"
+            app:layout_constraintStart_toStartOf="@+id/imageView55" />
+
+        <TextView
+            android:id="@+id/textView39"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:text="Sabores"
+            android:textColor="@color/marrom"
+            android:textSize="9sp"
+            app:layout_constraintBottom_toTopOf="@+id/ibFiltroDoce"
+            app:layout_constraintEnd_toEndOf="@+id/imageView5"
+            app:layout_constraintStart_toStartOf="@+id/imageView5" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageButton
+        android:id="@+id/btCardapioMostrarFiltros"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/background_botao_filtro"
+        android:scaleType="center"
+        android:src="@drawable/ic_baseline_filter_alt_24"
+        app:layout_constraintBottom_toBottomOf="@+id/tvCardapioTitulo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline11"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

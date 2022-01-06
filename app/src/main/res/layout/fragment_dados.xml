@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutDados"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/branco"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:tag="FRAGMENT_DADOS"
+    tools:context=".fragment.Dados">
+
+    <ScrollView
+        android:id="@+id/scrollViewFragmentDados"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/imageView2121"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:alpha="0.10"
+                android:scaleType="centerCrop"
+                android:src="@drawable/fundo_rv"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvDadosTitulo"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:background="@drawable/background_titulo_fragment"
+                android:gravity="center"
+                android:padding="4dp"
+                android:text="Meus Dados"
+                android:textColor="@color/branco"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tvDadosNome"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="Nome:"
+                android:textColor="@color/marrom"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/etDadosNome"
+                app:layout_constraintTop_toBottomOf="@+id/btDadosBuscaLocal" />
+
+            <EditText
+                android:id="@+id/etDadosNome"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/drawable_textbox"
+                android:gravity="center|left"
+                android:hint="Seu nome"
+                android:imeOptions="actionDone"
+                android:inputType="textCapSentences"
+                android:maxLength="40"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:textColor="@color/marrom"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/etDadosCelular"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDadosNome" />
+
+            <TextView
+                android:id="@+id/tvDadosCelular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Celular:"
+                android:textColor="@color/marrom"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/etDadosCelular"
+                app:layout_constraintTop_toTopOf="@+id/tvDadosNome" />
+
+            <com.santalu.maskara.widget.MaskEditText
+                android:id="@+id/etDadosCelular"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/drawable_textbox"
+                android:gravity="center|left"
+                android:hint="Seu número de celular"
+                android:imeOptions="actionDone"
+                android:inputType="number|phone"
+                android:maxLength="14"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:textColor="@color/marrom"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDadosCelular"
+                app:mask="(__)_____-____"
+                app:maskCharacter="_"
+                app:maskStyle="normal" />
+
+            <TextView
+                android:id="@+id/tvDadosRua"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="Rua:"
+                android:textColor="@color/marrom"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/etDadosRua"
+                app:layout_constraintTop_toBottomOf="@+id/etDadosNome" />
+
+            <EditText
+                android:id="@+id/etDadosRua"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/drawable_textbox"
+                android:gravity="center|left"
+                android:hint="O nome de sua rua"
+                android:imeOptions="actionDone"
+                android:inputType="textCapSentences"
+                android:maxLength="40"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:textColor="@color/marrom"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/etDadosNumero"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDadosRua" />
+
+            <TextView
+                android:id="@+id/tvDadosNumero"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Nº:"
+                android:textColor="@color/marrom"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/etDadosNumero"
+                app:layout_constraintTop_toTopOf="@+id/tvDadosRua" />
+
+            <EditText
+                android:id="@+id/etDadosNumero"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/drawable_textbox"
+                android:gravity="center|left"
+                android:hint="O nº de sua casa"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:maxLength="40"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:textColor="@color/marrom"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDadosNumero" />
+
+            <TextView
+                android:id="@+id/tvDadosBairro"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="Bairro:"
+                android:textColor="@color/marrom"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/etDadosBairro"
+                app:layout_constraintTop_toBottomOf="@+id/etDadosNumero" />
+
+            <AutoCompleteTextView
+                android:id="@+id/etDadosBairro"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/drawable_textbox"
+                android:gravity="center|left"
+                android:hint="O seu bairro"
+                android:imeOptions="actionDone"
+                android:inputType="textCapSentences"
+                android:maxLength="40"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:textColor="@color/marrom"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDadosBairro" />
+
+            <TextView
+                android:id="@+id/tvDadosReferencia"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="Complemento:"
+                android:textColor="@color/marrom"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/etDadosReferencia"
+                app:layout_constraintTop_toBottomOf="@+id/etDadosBairro" />
+
+            <EditText
+                android:id="@+id/etDadosReferencia"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/drawable_textbox"
+                android:gravity="center|left"
+                android:hint="Informações para facilitar a entrega"
+                android:imeOptions="actionDone"
+                android:inputType="textCapSentences"
+                android:maxLength="40"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:textColor="@color/marrom"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDadosReferencia" />
+
+            <ImageView
+                android:id="@+id/ivDados"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/ic_icone_dados_imagem_marrom"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDadosTitulo" />
+
+            <Button
+                android:id="@+id/btDadosSalvar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/background_botao_arredondado"
+                android:padding="8dp"
+                android:text="Salvar Alterações"
+                android:textColor="@color/branco"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ProgressBar
+                android:id="@+id/pbDados"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:indeterminateDrawable="@drawable/progress"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <Button
+                android:id="@+id/btDadosBuscaLocal"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/background_botao_arredondado"
+                android:drawableLeft="@drawable/ic_baseline_my_location_24"
+                android:drawableRight="@drawable/ic_baseline_my_location_24"
+                android:padding="8dp"
+                android:text=" Buscar por Local "
+                android:textColor="@color/branco"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivDados" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

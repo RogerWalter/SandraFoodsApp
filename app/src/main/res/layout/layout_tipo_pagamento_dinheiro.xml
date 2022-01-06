@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_elevated_branco"
+    android:paddingBottom="8dp">
+
+    <TextView
+        android:id="@+id/textView101"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:drawableLeft="@drawable/ic_baseline_attach_money_24"
+        android:gravity="center"
+        android:text="Precisará de troco?"
+        android:textColor="@color/marrom"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btlPagDinSim"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/background_botao_arredondado_branco"
+        android:elevation="3dp"
+        android:text="Sim"
+        android:textColor="@color/marrom"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView101"
+        app:layout_constraintEnd_toStartOf="@+id/btlPagDinNao"
+        app:layout_constraintTop_toTopOf="@+id/textView101" />
+
+    <Button
+        android:id="@+id/btlPagDinNao"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/background_botao_arredondado_branco"
+        android:elevation="3dp"
+        android:text="Não"
+        android:textColor="@color/marrom"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView101"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView101"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/etPagamentoDinTrocoPara"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/drawable_textbox"
+        android:gravity="center|left"
+        android:hint="Informe o valor"
+        android:inputType="number|numberDecimal"
+        android:imeOptions="actionDone"
+        android:maxLength="6"
+        android:paddingLeft="8dp"
+        android:paddingTop="4dp"
+        android:paddingRight="8dp"
+        android:paddingBottom="4dp"
+        android:textColor="@color/marrom"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView151"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/btlPagDinSim"
+        app:layout_constraintTop_toTopOf="@+id/textView151" />
+
+    <TextView
+        android:id="@+id/textView151"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="2dp"
+        android:text="Preciso de troco para: "
+        android:textAlignment="textEnd"
+        android:textColor="@color/marrom"
+        app:layout_constraintEnd_toStartOf="@+id/textView9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView152" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="2dp"
+        android:text="R$"
+        android:textAlignment="textEnd"
+        android:textColor="@color/laranja"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textView151"
+        app:layout_constraintEnd_toStartOf="@+id/etPagamentoDinTrocoPara"
+        app:layout_constraintTop_toTopOf="@+id/textView151" />
+
+    <TextView
+        android:id="@+id/textView152"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Não levaremos troco. :)"
+        android:textAlignment="center"
+        android:textColor="@color/marrom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView101" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

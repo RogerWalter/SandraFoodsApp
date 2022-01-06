@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_dialogo_arredondado">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0.1"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvDialogoDadosTitulo"
+        app:srcCompat="@drawable/fundo_rv" />
+
+    <Button
+        android:id="@+id/btDialogoDadosBuscaLocal"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/background_botao_arredondado"
+        android:drawableLeft="@drawable/ic_baseline_my_location_24"
+        android:drawableRight="@drawable/ic_baseline_my_location_24"
+        android:padding="8dp"
+        android:text=" Buscar por Local "
+        android:textColor="@color/branco"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDialogoDadosTitulo" />
+
+    <TextView
+        android:id="@+id/tvDialogoDadosTitulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_botao_arredondado"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="Meus Dados"
+        android:textColor="@color/branco"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvDialogoDadosNome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:text="Nome:"
+        android:textColor="@color/marrom"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/etDialogoDadosNome"
+        app:layout_constraintTop_toBottomOf="@+id/btDialogoDadosBuscaLocal" />
+
+    <EditText
+        android:id="@+id/etDialogoDadosNome"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="2dp"
+        android:background="@drawable/drawable_textbox"
+        android:gravity="center|left"
+        android:hint="Seu nome"
+        android:imeOptions="actionDone"
+        android:inputType="textCapSentences"
+        android:maxLength="40"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/marrom"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/etDialogoDadosCelular"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDialogoDadosNome" />
+
+    <TextView
+        android:id="@+id/tvDialogoDadosCelular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Celular:"
+        android:textColor="@color/marrom"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/etDialogoDadosCelular"
+        app:layout_constraintTop_toTopOf="@+id/tvDialogoDadosNome" />
+
+    <com.santalu.maskara.widget.MaskEditText
+        android:id="@+id/etDialogoDadosCelular"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/drawable_textbox"
+        android:gravity="center|left"
+        android:hint="Seu número de celular"
+        android:inputType="number"
+        android:imeOptions="actionDone"
+        android:maxLength="14"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/marrom"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/etDialogoDadosNome"
+        app:layout_constraintTop_toBottomOf="@+id/tvDialogoDadosCelular"
+        app:mask="(__)_____-____"
+        app:maskCharacter="_"
+        app:maskStyle="normal"/>
+
+    <TextView
+        android:id="@+id/tvDialogoDadosRua"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:text="Rua:"
+        android:textColor="@color/marrom"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/etDialogoDadosRua"
+        app:layout_constraintTop_toBottomOf="@+id/etDialogoDadosCelular" />
+
+    <EditText
+        android:id="@+id/etDialogoDadosRua"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="2dp"
+        android:background="@drawable/drawable_textbox"
+        android:gravity="center|left"
+        android:hint="O nome de sua rua"
+        android:imeOptions="actionDone"
+        android:inputType="textCapSentences"
+        android:maxLength="40"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/marrom"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDialogoDadosRua" />
+
+    <TextView
+        android:id="@+id/tvDialogoDadosNumero"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:text="Nº da Casa:"
+        android:textColor="@color/marrom"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/etDialogoDadosNumero"
+        app:layout_constraintTop_toBottomOf="@+id/etDialogoDadosCelular" />
+
+    <EditText
+        android:id="@+id/etDialogoDadosNumero"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/drawable_textbox"
+        android:gravity="center|left"
+        android:hint="O número de sua casa"
+        android:inputType="number"
+        android:imeOptions="actionDone"
+        android:maxLength="40"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/marrom"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toBottomOf="@+id/tvDialogoDadosNumero" />
+
+    <TextView
+        android:id="@+id/tvDialogoDadosBairro"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:text="Bairro:"
+        android:textColor="@color/marrom"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/etDialogoDadosBairro"
+        app:layout_constraintTop_toBottomOf="@+id/etDialogoDadosNumero" />
+
+    <AutoCompleteTextView
+        android:id="@+id/etDialogoDadosBairro"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/drawable_textbox"
+        android:gravity="center|left"
+        android:hint="O seu bairro"
+        android:imeOptions="actionDone"
+        android:inputType="textCapSentences"
+        android:maxLength="40"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/marrom"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDialogoDadosBairro" />
+
+    <TextView
+        android:id="@+id/tvDialogoDadosReferencia"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:text="Complemento:"
+        android:textColor="@color/marrom"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/etDialogoDadosReferencia"
+        app:layout_constraintTop_toBottomOf="@+id/etDialogoDadosBairro" />
+
+    <EditText
+        android:id="@+id/etDialogoDadosReferencia"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/drawable_textbox"
+        android:gravity="center|left"
+        android:hint="Informações para facilitar a entrega"
+        android:imeOptions="actionDone"
+        android:inputType="textCapSentences"
+        android:maxLength="40"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/marrom"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDialogoDadosReferencia" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <Button
+        android:id="@+id/btDialogoDadosSalvar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/background_botao_arredondado"
+        android:padding="8dp"
+        android:text="Salvar Alterações"
+        android:textColor="@color/branco"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btDialogoDadosCancelar"
+        app:layout_constraintTop_toBottomOf="@+id/etDialogoDadosReferencia" />
+
+    <Button
+        android:id="@+id/btDialogoDadosCancelar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="2dp"
+        android:background="@drawable/background_botao_arredondado"
+        android:padding="8dp"
+        android:text="Cancelar"
+        android:textColor="@color/branco"
+        app:layout_constraintBottom_toBottomOf="@+id/btDialogoDadosSalvar"
+        app:layout_constraintEnd_toStartOf="@+id/btDialogoDadosSalvar"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btDialogoDadosSalvar" />
+
+
+    <ProgressBar
+        android:id="@+id/progressBarDialogoEditarDados"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:indeterminateDrawable="@drawable/progress"
+        app:layout_constraintBottom_toBottomOf="@+id/etDialogoDadosReferencia"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btDialogoDadosBuscaLocal" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

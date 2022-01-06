@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_pedido"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/branco"
+    android:tag="FRAGMENT_PEDIDO"
+    tools:context=".fragment.Pedido">
+
+    <ImageView
+        android:id="@+id/imageView31313"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0.10"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fundo_rv"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvPedido"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPedidoTaxa" />
+
+    <TextView
+        android:id="@+id/tvPedidoTitulo"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:background="@drawable/background_titulo_fragment"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="Meu Pedido"
+        android:textColor="@color/branco"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivPedidoSemDados"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_sem_dados"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvPedidoSemDados"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nada de delícias ainda..."
+        android:textColor="@color/laranja"
+        app:layout_constraintEnd_toEndOf="@+id/ivPedidoSemDados"
+        app:layout_constraintStart_toStartOf="@+id/ivPedidoSemDados"
+        app:layout_constraintTop_toBottomOf="@+id/ivPedidoSemDados" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabConfirmarPedido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:clickable="true"
+        android:src="@drawable/ic_baseline_check_24"
+        app:backgroundTint="@color/branco"
+        app:elevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabCancelaPedido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:clickable="true"
+        android:src="@drawable/ic_baseline_close_24"
+        app:backgroundTint="@color/branco"
+        app:elevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <ProgressBar
+        android:id="@+id/progressBarPedido"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:indeterminateDrawable="@drawable/progress"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499" />
+
+    <TextView
+        android:id="@+id/tvPedidoTeste"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="R$0,00"
+        android:textColor="@color/marrom"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/fabConfirmarPedido"
+        app:layout_constraintStart_toEndOf="@+id/fabCancelaPedido" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total dos Itens: "
+        android:textColor="@color/laranja"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tvPedidoTeste"
+        app:layout_constraintEnd_toEndOf="@+id/tvPedidoTeste"
+        app:layout_constraintStart_toStartOf="@+id/tvPedidoTeste" />
+
+    <TextView
+        android:id="@+id/tvPedidoPrazo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Calculando prazos..."
+        android:textColor="@color/marrom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPedidoTitulo" />
+
+    <TextView
+        android:id="@+id/tvPedidoTaxa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Calculando a taxa..."
+        android:textColor="@color/marrom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPedidoPrazo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

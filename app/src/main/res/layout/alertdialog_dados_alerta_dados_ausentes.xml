@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_dialogo_arredondado"
+    android:minWidth="345dp">
+
+    <Button
+        android:id="@+id/btDadosAlertaDadosAusenteContinuar"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/background_botao_arredondado"
+        android:padding="8dp"
+        android:text="Farei isso depois"
+        android:textColor="@color/branco"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btDadosAlertaDadosAusenteVoltar"
+        app:layout_constraintTop_toBottomOf="@+id/tvDadosAlertaDescricao2DadosAusentes" />
+
+    <Button
+        android:id="@+id/btDadosAlertaDadosAusenteVoltar"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/background_botao_arredondado"
+        android:padding="8dp"
+        android:text="Farei isso agora"
+        android:textColor="@color/branco"
+        app:layout_constraintBottom_toBottomOf="@+id/btDadosAlertaDadosAusenteContinuar"
+        app:layout_constraintEnd_toStartOf="@+id/btDadosAlertaDadosAusenteContinuar"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btDadosAlertaDadosAusenteContinuar" />
+
+    <TextView
+        android:id="@+id/tvDadosAlertaDescricao1DadosAusentes"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center"
+        android:text="Nem todas as informações de endereço (utilizadas em ENTREGAS) foram preenchidas. Se desejar uma entrega em algum momento, precisará preencher depois."
+        android:textAlignment="center"
+        android:textColor="@color/marrom"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDadosAlertaTituloDadosAusentes" />
+
+    <TextView
+        android:id="@+id/tvDadosAlertaDescricao2DadosAusentes"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center"
+        android:text="Deseja continuar mesmo assim?"
+        android:textAlignment="center"
+        android:textColor="@color/marrom"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDadosAlertaDescricao1DadosAusentes" />
+
+    <TextView
+        android:id="@+id/tvDadosAlertaTituloDadosAusentes"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="2dp"
+        android:background="@drawable/background_titulo_dialogo_arrendondado"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="Aviso"
+        android:textColor="@color/branco"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

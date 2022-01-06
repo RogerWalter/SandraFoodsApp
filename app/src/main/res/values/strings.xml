@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Sandra Foods</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_tela_acompanhar_motoboy">Map</string>
+    <string name="title_activity_tela_acompanhar_motoby">Map</string>
+    <string name="descricao_service">Exibindo sua localização aos clientes</string>
+    <string name="titulo_service">Entrega em Andamento</string>
+
+</resources>

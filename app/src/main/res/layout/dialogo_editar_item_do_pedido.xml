@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayoutBottomSheetAddItemPedido"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_dialogo_arredondado"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvTituloBSEdtItemPedido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_botao_arredondado"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="Editar Item do Pedido"
+        android:textColor="@color/branco"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTituloBSEdtItemDescItem"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="Hambúrguer de Costela"
+        android:textColor="@color/marrom"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloBSEdtItemPedido" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/background_dialogo_arredondado"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutObsEdtItem">
+
+        <TextView
+            android:id="@+id/tvDialogoEdtItemQuantidade"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:gravity="left|center_vertical"
+            android:text="Quantidade:"
+            android:textColor="@color/marrom"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/ibDialogoEdtItemAumentarQtd"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/branco"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="@+id/tvDialogoEdtItemQuantidadeMostrar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvDialogoEdtItemQuantidadeMostrar"
+            app:layout_constraintTop_toTopOf="@+id/tvDialogoEdtItemQuantidadeMostrar"
+            app:layout_constraintVertical_bias="0.375"
+            app:srcCompat="@drawable/ic_add_bt_add_qtd" />
+
+        <ImageButton
+            android:id="@+id/ibDialogoEdtItemDiminuirQtd"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/branco"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="@+id/tvDialogoEdtItemQuantidadeMostrar"
+            app:layout_constraintEnd_toStartOf="@+id/tvDialogoEdtItemQuantidadeMostrar"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvDialogoEdtItemQuantidadeMostrar"
+            app:srcCompat="@drawable/ic_rem_bt_rem_qtd" />
+
+        <TextView
+            android:id="@+id/tvDialogoEdtItemQuantidadeMostrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="@color/marrom"
+            android:textSize="60sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ibDialogoEdtItemAumentarQtd"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/ibDialogoEdtItemDiminuirQtd"
+            app:layout_constraintTop_toBottomOf="@+id/tvDialogoEdtItemQuantidade" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutAdicionaisEditItemPedido"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloBSEdtItemDescItem">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <TextView
+            android:id="@+id/tvDialogoEdtItemAdicionais"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:gravity="left|center_vertical"
+            android:padding="4dp"
+            android:paddingBottom="8dp"
+            android:text="Adicionais:"
+            android:textColor="@color/marrom"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutAdicionais3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDialogoEdtItemAdicionais" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutAdicionais4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toBottomOf="@+id/tvDialogoEdtItemAdicionais" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutObsEdtItem"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:padding="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutAdicionaisEditItemPedido">
+
+        <TextView
+            android:id="@+id/tvEdtDescricaoObservacoes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:gravity="left|center_vertical"
+            android:text="Observações:"
+            android:textColor="@color/marrom"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etDialogoEdtItemObservacao"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="@drawable/drawable_textbox"
+            android:gravity="center|left"
+            android:hint="Ex.: quero sem cebola meus lindão"
+            android:imeOptions="actionDone"
+            android:inputType="textCapSentences"
+            android:maxLength="40"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:textColor="@color/marrom"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvEdtDescricaoObservacoes" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout7"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+
+        <TextView
+            android:id="@+id/tvTotalizadorEdtItemDialogoBS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:text="Total do Item:"
+            android:textColor="@color/laranja"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/tvTotalizadorEdtItemDialogoTotal"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTotalizadorEdtItemDialogoTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:text="R$24,50"
+            android:textColor="@color/marrom"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTotalizadorEdtItemDialogoBS"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvTotalizadorEdtItemDialogoBS"
+            app:layout_constraintTop_toTopOf="@+id/tvTotalizadorEdtItemDialogoBS" />
+
+        <Button
+            android:id="@+id/btEdtItemPedidoSalvar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/background_botao_arredondado"
+            android:elevation="3dp"
+            android:padding="8dp"
+            android:text="Salvar"
+            android:textColor="@color/branco"
+            app:layout_constraintBottom_toBottomOf="@+id/btEdtItemPedidoCancelar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btEdtItemPedidoRemover"
+            app:layout_constraintTop_toTopOf="@+id/btEdtItemPedidoCancelar" />
+
+        <Button
+            android:id="@+id/btEdtItemPedidoCancelar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/background_botao_arredondado"
+            android:elevation="3dp"
+            android:padding="8dp"
+            android:text="Cancelar"
+            android:textColor="@color/branco"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btEdtItemPedidoRemover"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTotalizadorEdtItemDialogoBS" />
+
+        <Button
+            android:id="@+id/btEdtItemPedidoRemover"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/background_botao_arredondado_marrom"
+            android:elevation="3dp"
+            android:padding="8dp"
+            android:text="Remover"
+            android:textColor="@color/branco"
+            app:layout_constraintBottom_toBottomOf="@+id/btEdtItemPedidoSalvar"
+            app:layout_constraintEnd_toStartOf="@+id/btEdtItemPedidoSalvar"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btEdtItemPedidoCancelar"
+            app:layout_constraintTop_toTopOf="@+id/btEdtItemPedidoSalvar" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

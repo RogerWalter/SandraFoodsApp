@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ssoft.sandrafoodsapp">
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the "MyLocation" functionality.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher_sf_quadrado"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_sf_redondo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SandraFoodsApp">
+        <activity android:name="com.ssoft.sandrafoodsapp.activity.TelaAplicativoOffline"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name="com.ssoft.sandrafoodsapp.activity.TelaEstabelecimentoFechado"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity android:name="com.ssoft.sandrafoodsapp.activity.TelaSplashScreen"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="com.ssoft.sandrafoodsapp.helper.NotificationService"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="com.stizsoftware.sandrafoodsapp.helper.NotificationService" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyA8SxanY0HOOa1URmg4e3-9khjqL92XE8s" />
+
+        <activity
+            android:name="com.ssoft.sandrafoodsapp.activity.TelaAcompanharMotoboy"
+            android:configChanges="orientation"
+            android:label="@string/title_activity_tela_acompanhar_motoby"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.ssoft.sandrafoodsapp.activity.TelaAcompanhamentoPedido"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.ssoft.sandrafoodsapp.activity.TelaConfirmacaoPedido"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.ssoft.sandrafoodsapp.activity.TelaSlider"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Intro"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.ssoft.sandrafoodsapp.activity.TelaIdentificacao"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.ssoft.sandrafoodsapp.activity.TelaBemVindo"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.ssoft.sandrafoodsapp.activity.TelaPrincipal"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+    </application>
+
+</manifest>

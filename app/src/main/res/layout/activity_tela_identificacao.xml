@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/loTelaIdentificacao"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/branco"
+    android:visibility="visible"
+    tools:context=".activity.TelaIdentificacao">
+
+    <Button
+        android:id="@+id/btEntrarIdentificacao"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/background_botao_arredondado"
+        android:text="Quero ser feliz!"
+        android:textColor="@color/branco"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/ivWhatsTelaIdentificacao"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tvTexto1Identificacao"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="Saudações pessoa maravilhosa!"
+        android:textColor="@color/laranja"
+        android:textSize="24sp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivBemVindoIdentificacao" />
+
+
+    <TextView
+        android:id="@+id/tvTexto2Identificacao"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="Como podemos lhe chamar?"
+        android:textColor="@color/laranja"
+        android:textSize="16sp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTexto1Identificacao" />
+
+    <EditText
+        android:id="@+id/etNomeClienteIdentificacao"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/drawable_textbox"
+        android:drawableLeft="@drawable/ic_emoji_feliz"
+        android:drawableRight="@drawable/ic_emoji_feliz"
+        android:gravity="center"
+        android:hint="O nome dessa pessoa linda!"
+        android:imeOptions="actionDone"
+        android:inputType="textCapSentences"
+        android:maxLength="40"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:textAlignment="center"
+        android:textColor="@color/marrom"
+        android:textSize="16sp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTexto2Identificacao" />
+
+
+    <TextView
+        android:id="@+id/tvTexto4Identificacao"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="Qual o seu número de celular?"
+        android:textColor="@color/laranja"
+        android:textSize="16sp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNomeClienteIdentificacao" />
+
+    <com.santalu.maskara.widget.MaskEditText
+        android:id="@+id/etCelularClienteIdentificacao"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/drawable_textbox"
+        android:drawableLeft="@drawable/ic_ligacao_esquerda"
+        android:drawableRight="@drawable/ic_ligacao_direita"
+        android:gravity="center"
+        android:hint="O celular dessa pessoa linda!"
+        android:inputType="number"
+        android:imeOptions="actionDone"
+        android:maxLength="14"
+        app:mask="(__)_____-____"
+        app:maskCharacter="_"
+        app:maskStyle="normal"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:textAlignment="center"
+        android:textColor="@color/marrom"
+        android:textSize="16sp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTexto4Identificacao" />
+
+    <ImageView
+        android:id="@+id/ivBemVindoIdentificacao"
+        android:layout_width="0dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="32dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_sandra_foods" />
+
+
+    <ImageView
+        android:id="@+id/ivWhatsTelaIdentificacao"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="16dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/botao_whats_tela_bem_vindo" />
+
+    <Button
+        android:id="@+id/btTelaIdentVerificarConexao"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/background_botao_arredondado"
+        android:text="Recarregar"
+        android:textColor="@color/branco"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/btEntrarIdentificacao"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivSemConexao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_imagem_sem_conexao" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
