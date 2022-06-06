@@ -68,6 +68,7 @@ public class TelaIdentificacao extends AppCompatActivity {
         getSupportActionBar().hide();
         //Inicializa os componentes do layout
         inicializaComponentes();
+
         AsyncTask.execute(new Runnable() {
             @Override
             public void run() {
@@ -676,7 +677,7 @@ public class TelaIdentificacao extends AppCompatActivity {
         });
     }
 
-    private int parametroAbertoOuFechado = 0;
+    private int parametroAbertoOuFechado = 1;
     Date horaLib = null;
 
     public void verificaFuncionamentoRestaurante()
@@ -691,6 +692,11 @@ public class TelaIdentificacao extends AppCompatActivity {
 
         final SimpleDateFormat formatoHora = new SimpleDateFormat("HH:mm:ss");
         //String hora = formatoHora.format(new Date());
+        if(horaLib == null)
+        {
+            Date currentTime = Calendar.getInstance().getTime();
+            horaLib = currentTime;
+        }
         String hora = formatoHora.format(horaLib);
 
         Date horaAbre = null, horaFecha = null, horaAtual = null;

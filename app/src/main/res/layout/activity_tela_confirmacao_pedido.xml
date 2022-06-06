@@ -273,7 +273,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="4dp"
             android:layout_marginBottom="8dp"
-            android:background="@drawable/drawable_textbox"
+            android:background="@drawable/drawable_textbox_destacado"
             android:gravity="center|left"
             android:hint="Informe seu cupom aqui"
             android:inputType="textPersonName"

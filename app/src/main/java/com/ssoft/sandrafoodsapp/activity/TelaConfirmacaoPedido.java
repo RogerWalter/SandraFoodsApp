@@ -223,6 +223,29 @@ public class TelaConfirmacaoPedido extends AppCompatActivity {
 
         etDesconto.setText("");
 
+        //OBRIGAR O USUÁRIO A SELECIONAR UM TIPO DE PEDIDO ANTES DE APLICAR O CUPOM
+        etDesconto.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if(b)
+                {
+                    if(parametroTipoPedido == -1)
+                    {
+                        SuperActivityToast.create(TelaConfirmacaoPedido.this, new Style(), Style.TYPE_STANDARD)
+                                .setText("Antes de aplicar um cupom, é necessário que informe o tipo do seu pedido. Escolha uma das opções: Entrega, Retirada ou Consumo no Local.")
+                                .setTextSize(Style.TEXTSIZE_VERY_LARGE)
+                                .setDuration(Style.DURATION_LONG)
+                                .setColor(getResources().getColor(R.color.vermelho))
+                                .setAnimations(Style.ANIMATIONS_POP)
+                                .show();
+                        etDesconto.setEnabled(false);
+                        etDesconto.setEnabled(true);
+                        return;
+                    }
+                }
+            }
+        });
+
         tvDescontoDesc.setVisibility(View.GONE);
         tvDescontoValor.setVisibility(View.GONE);
 
@@ -277,6 +300,7 @@ public class TelaConfirmacaoPedido extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         parametroTipoPedido = 0;
+                        etDesconto.setEnabled(true);
                         mostrarPagamento();
                         limparBotoesPagamento();
                         recuperaDados();
@@ -288,6 +312,7 @@ public class TelaConfirmacaoPedido extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         parametroTipoPedido = 1;
+                        etDesconto.setEnabled(true);
                         esconderPagamento();
                         limparBotoesPagamento();
                         recuperaDados();
@@ -299,6 +324,7 @@ public class TelaConfirmacaoPedido extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         parametroTipoPedido = 2;
+                        etDesconto.setEnabled(true);
                         esconderPagamento();
                         limparBotoesPagamento();
                         recuperaDados();
@@ -309,6 +335,8 @@ public class TelaConfirmacaoPedido extends AppCompatActivity {
                 .setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        if(etDesconto.getText().length() == 0)
+                            return;
                         verificaCupomDesconto();
                     }
                 });
@@ -374,6 +402,8 @@ public class TelaConfirmacaoPedido extends AppCompatActivity {
                     .show();
             return;
         }
+
+        calulcarTotalDoPedido();
 
         loTipoPedido.setVisibility(View.INVISIBLE);
         loTotalizador.setVisibility(View.INVISIBLE);
@@ -801,6 +831,7 @@ public class TelaConfirmacaoPedido extends AppCompatActivity {
         bottomSheetDialog.setContentView(R.layout.dialogo_alterar_dados_cliente);
 
         bottomSheetDialog.setCanceledOnTouchOutside(false);
+        bottomSheetDialog.setCancelable(false);
 
         String[] ITENS = {
                 "25 De Julho", "Alpestre", "Alpino", "Bela Aliança", "Bohemerwald", "Brasilia", "Centro", "Colonial", "Cruzeiro", "Dona Francisca", "Fundão",
@@ -843,6 +874,7 @@ public class TelaConfirmacaoPedido extends AppCompatActivity {
                         if(TextUtils.isEmpty(cliente.getRua()) || TextUtils.isEmpty(cliente.getBairro()))
                         {
                             parametroTipoPedido = 1;
+                            loPagamento.setVisibility(View.INVISIBLE);
                             configuraBotoesTipoDePedido();
                             SuperActivityToast.create(TelaConfirmacaoPedido.this, new Style(), Style.TYPE_STANDARD)
                                     .setText("Os dados para entrega não foram preenchidos.")
@@ -851,6 +883,9 @@ public class TelaConfirmacaoPedido extends AppCompatActivity {
                                     .setAnimations(Style.ANIMATIONS_POP)
                                     .show();
                         }
+                        loPagamento.setVisibility(View.INVISIBLE);
+                        parametroTipoPedido = 1;
+                        configuraBotoesTipoDePedido();
                         bottomSheetDialog.dismiss();
                     }
                 });
@@ -1203,9 +1238,12 @@ public class TelaConfirmacaoPedido extends AppCompatActivity {
             String bairro = addresses.get(0).getSubLocality();
             String numero = addresses.get(0).getSubThoroughfare();
 
-            retorno.setRua(rua.trim());
-            retorno.setBairro(bairro.trim());
-            retorno.setNumero(numero.trim());
+            if(!TextUtils.isEmpty(rua))
+            {
+                retorno.setRua(rua.trim());
+                retorno.setBairro(bairro.trim());
+                retorno.setNumero(numero.trim());
+            }
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -1427,7 +1465,14 @@ public class TelaConfirmacaoPedido extends AppCompatActivity {
             valorTotalPedido = totalItensPedido;
         }
         Locale ptBr = new Locale("pt", "BR");
-        String valorMostrar = NumberFormat.getCurrencyInstance(ptBr).format(valorTotalPedido);
+        String valorMostrar = "-";
+        try{
+            valorMostrar = NumberFormat.getCurrencyInstance(ptBr).format(valorTotalPedido);
+        }
+        catch(Exception e)
+        {
+            valorMostrar = "R$0,00";
+        }
         tvTotalPedido.setText(valorMostrar);
     }
 
@@ -2478,7 +2523,7 @@ public class TelaConfirmacaoPedido extends AppCompatActivity {
         });
     }
 
-    public int parametroAbertoOuFechado = 0;
+    public int parametroAbertoOuFechado = 1;
 
     public void verificaFuncionamentoRestaurante()
     {
@@ -2492,6 +2537,11 @@ public class TelaConfirmacaoPedido extends AppCompatActivity {
 
         final SimpleDateFormat formatoHora = new SimpleDateFormat("HH:mm:ss");
         //String hora = formatoHora.format(new Date());
+        if(horaLib == null)
+        {
+            Date currentTime = Calendar.getInstance().getTime();
+            horaLib = currentTime;
+        }
         String hora = formatoHora.format(horaLib);
 
         Date horaAbre = null, horaFecha = null, horaAtual = null;

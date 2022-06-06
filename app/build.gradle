@@ -9,8 +9,8 @@ android {
         applicationId "com.stizsoftware.sandrafoodsapp"
         minSdkVersion 28
         targetSdkVersion 30
-        versionCode 6 //versão 4 pq o Google encheu a paciencia
-        versionName "1.0.2"
+        versionCode 9 //versão 5 pq o Google encheu a paciencia
+        versionName "1.0.5"
         android.defaultConfig.vectorDrawables.useSupportLibrary true
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         multiDexEnabled true
